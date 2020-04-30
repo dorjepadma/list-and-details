@@ -5,6 +5,7 @@ import {
   Switch
 } from 'react-router-dom';
 import CharacterList from '../../containers/CharactersList.jsx';
+import CharacterDetail from '../../containers/CharacterDetail.jsx';
 
 export default function App() {
   return ( 
@@ -12,7 +13,8 @@ export default function App() {
       <p>The Characters of Avatar:</p>
       <Router>
         <Switch>
-          <Route exact path="/" component={CharacterList} />
+          <Route exact path='/' component={CharacterList} />
+          <Route path='/details' component={CharacterDetail}/> 
         </Switch>
       </Router>
     </>

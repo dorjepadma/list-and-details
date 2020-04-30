@@ -21,11 +21,11 @@ const DetailsList = () => {
             style={{ width: 250, height: 250, borderRadius: 250 / 2 }} 
             alt={details.name}
           />           
-          <h2 className="detailsAllies">{details.allies}</h2>
-          <h2 className="detailsEnemies">{details.enemies}</h2>
-          <h2 className="detailsWeapon">{details.weapon}</h2>
-          <h2 className="detailsPosition">{details.position}</h2>
-          <h2 className="detailsAffiliation">{details.affiliation}</h2>
+          <h2 className="detailsAllies"> Allies: {details.allies}</h2>
+          <h2 className="detailsEnemies">Enemies: {details.enemies}</h2>
+          <h2 className="detailsWeapon">Weapon: {details.weapon}</h2>
+          <h2 className="detailsPosition">Position: {details.position}</h2>
+          <h2 className="detailsAffiliation">Affiliations: {details.affiliation}</h2>
         </div>
       )
       }
@@ -33,4 +33,5 @@ const DetailsList = () => {
   );
 };
 export default DetailsList;
+
 
