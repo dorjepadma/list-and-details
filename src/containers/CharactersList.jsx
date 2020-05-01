@@ -1,6 +1,7 @@
 //This page handles state management and rendering of Avatar Character List
 import React, { useState, useEffect } from 'react';
 import { getCharacters } from '../services/Airbender';
+import {Link} from "react-trouter-dom";
 
 const CharacterList = () => {
 
