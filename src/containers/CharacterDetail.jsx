@@ -1,9 +1,8 @@
 //This page handels state and rendering of Avatar Character details
 import React, { useState, useEffect } from 'react';
-import { getDetail } from '../services/AirbenderDetails';
+import { getDetail } from '../services/Airbender';
 import PropTypes from 'prop-types';
-import { Airbender } from '../../services/AirbenderDetails';
-import {Link} from "react-trouter-dom";
+import { fetchCharacters } from '../services/Airbender';
 
 const DetailsList = () => {
 
@@ -15,6 +14,7 @@ const DetailsList = () => {
 
   }, []);
 
+  if(!character) return <h1>Patience!</h1>;
   return (
     <>
       {details.map (details => 
