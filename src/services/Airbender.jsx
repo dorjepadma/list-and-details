@@ -1,5 +1,5 @@
 //handles Airbender API call
-export const fetchCharacters = () => {
+export const fetchCharacter = () => {
   return fetch('http://last-airbender-api.herokuapp.com/api/v1/characters')
     .then(res => res.json())
     .then(json => json.results.map(({ characterId, name, allies, enemies, weapon, position, affilation, }) => ({

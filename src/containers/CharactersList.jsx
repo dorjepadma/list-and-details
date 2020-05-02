@@ -1,7 +1,7 @@
 //This page handles state management and rendering of Avatar Character List
 import React, { useState, useEffect } from 'react';
 import { fetchCharacter } from '../services/Airbender';
-import CharacterDetail from '../components/CharacterDetail';
+import Characters from '../components/Characters';
 
 
 const CharacterList = () => {
@@ -20,7 +20,7 @@ const CharacterList = () => {
     <>
       <button onClick={() => changePage(-1)} disabled={page === 1}>&lt;</button>
       <button onClick={() => changePage(1)} disabled={characters.length < 20}>&gt;</button>
-      <CharacterDetail characters={characters} />
+      <Characters characters={characters} />
     </>
   );
 };

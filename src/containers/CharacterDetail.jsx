@@ -1,40 +1,36 @@
 //This page handels state and rendering of Avatar Character details
 import React, { useState, useEffect } from 'react';
-import { getDetail } from '../services/Airbender';
+import CharacterDetail from '../components/CharacterDetail';
 import PropTypes from 'prop-types';
-import { fetchCharacters } from '../services/Airbender';
+import { fetchCharacter } from '../services/Airbender';
 
-const DetailsList = () => {
+const CharacterDetails = (match) => {
 
-  const [details, setDetails] = useState([]);
+  const [character, setCharacter] = useState([]);
 
   useEffect(() => {
-    getDetail()
-      .then(newDetails => setDetails(newDetails));
+    fetchCharacter(match.params.id)
+      .then(character => setCharacter(character));
 
   }, []);
 
   if(!character) return <h1>Patience!</h1>;
-  return (
-    <>
-      {details.map (details => 
-        <div key={details.id} className="detailsContainer">
-          <img className="detailsImage" 
-            src={details.photoUrl}
-            style={{ width: 250, height: 250, borderRadius: 250 / 2 }} 
-            alt={details.name}
-          />           
-          <h2 className="detailsAllies"> Allies: {details.allies}</h2>
-          <h2 className="detailsEnemies">Enemies: {details.enemies}</h2>
-          <h2 className="detailsWeapon">Weapon: {details.weapon}</h2>
-          <h2 className="detailsPosition">Position: {details.position}</h2>
-          <h2 className="detailsAffiliation">Affiliations: {details.affiliation}</h2>
-        </div>
-      )
-      }
-    </>
-  );
+  return <CharacterDetail name={character.name}
+    allies={character.allies}
+    enemies={character.enemies}
+    weapon={character.weapon}
+    position={character.position}
+    affiliation={character.affiliation}
+    image={character.image} />;
 };
-export default DetailsList;
+CharacterDetail.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string.isRequired
+    }).isRequired
+  }).isRequired
+};    
+
+export default CharacterDetails;
 
 
