@@ -2,31 +2,32 @@
 import React, { useState, useEffect } from 'react';
 import CharacterDetail from '../components/CharacterDetail';
 import PropTypes from 'prop-types';
-import { fetchCharacter } from '../services/Airbender';
+import { getDetail } from '../services/Airbender';
 
-const CharacterDetails = (match) => {
+const CharacterDetails = ({ match }) => {
 
   const [character, setCharacter] = useState([]);
 
   useEffect(() => {
-    fetchCharacter(match.params.id)
+    getDetail(match.params._id)
       .then(character => setCharacter(character));
 
   }, []);
 
   if(!character) return <h1>Patience!</h1>;
-  return <CharacterDetail name={character.name}
+
+  return <CharacterDetail 
+    name={character.name}
     allies={character.allies}
     enemies={character.enemies}
     weapon={character.weapon}
     position={character.position}
-    affiliation={character.affiliation}
-    image={character.image} />;
+    photoUrl={character.photoUrl} />;
 };
 CharacterDetail.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
-      id: PropTypes.string.isRequired
+      _id: PropTypes.string.isRequired
     }).isRequired
   }).isRequired
 };    

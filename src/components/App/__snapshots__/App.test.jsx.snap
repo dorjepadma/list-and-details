@@ -12,6 +12,10 @@ exports[`App component renders App 1`] = `
         exact={true}
         path="/"
       />
+      <Route
+        component={[Function]}
+        path="/details"
+      />
     </Switch>
   </BrowserRouter>
 </Fragment>

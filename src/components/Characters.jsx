@@ -6,8 +6,8 @@ import styles from './Characters.css';
 
 const Characters = ({ characters }) => {
   const characterElements = characters.map(character => (
-    <li key={character.id}>
-      <Link to={`/${character.id}`}>
+    <li key={character._id}>
+      <Link to={`/${character._id}`}>
         <Character {...character} />
       </Link>
     </li>
@@ -22,10 +22,10 @@ const Characters = ({ characters }) => {
 
 Characters.propTypes = {
   characters: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    image: PropTypes.string.isRequired,
+    _id: PropTypes.number.isRequired,
+    photoUrl: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    description: PropTypes.string
+    affiliation: PropTypes.string
   })).isRequired
 };
 

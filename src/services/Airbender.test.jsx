@@ -8,12 +8,12 @@ describe('airbender api', () => {
           {
             name: 'random Airbender 1',
             description: 'Airbender description',
-            image: 'https://air-bender.png'
+            photoUrl: 'https://air-bender.png'
           },
           {
             name: 'random Airbender 2',
             description: 'Airbender description',
-            image: 'https://air-bender.png'
+            photoUrl: 'https://air-bender.png'
           }
         ]
       })
@@ -25,12 +25,12 @@ describe('airbender api', () => {
           {
             name: 'random Airbender 1',
             description: 'Airbender description',
-            image: 'https://air-bender.png'
+            photoUrl: 'https://air-bender.png'
           },
           {
             name: 'test character 2',
             description: 'my character',
-            image: 'https://www.fillmurray.com/640/360'
+            photoUrl: 'https://www.fillmurray.com/640/360'
           }
         ]);
       });

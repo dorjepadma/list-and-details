@@ -1,0 +1,22 @@
+.Character {
+  height: 60%;
+  background-color: rgb(160, 160, 221);
+  color: white;
+  border: black;
+  }
+
+  img {
+    display: block;
+    margin: auto;
+    width: 70%;
+    height: 70%
+  }
+  
+  h3 {
+    text-align: center;
+  }
+
+  p {
+    padding: 1rem 2rem;
+    line-height: 1.5rem;
+  }
