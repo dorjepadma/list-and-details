@@ -1,6 +1,22 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch
+} from 'react-router-dom';
+import CharacterList from '../../containers/CharactersList.jsx';
+import CharacterDetails from '../../containers/CharacterDetail.jsx';
 
 export default function App() {
-  return <h1>Hello World</h1>;
-}
-  
+  return ( 
+    <>
+      <p>The Characters of Avatar:</p>
+      <Router>
+        <Switch>
+          <Route exact path='/' component={CharacterList} />
+          <Route path='/details' component={CharacterDetails}/> 
+        </Switch>
+      </Router>
+    </>
+  );
+} 
